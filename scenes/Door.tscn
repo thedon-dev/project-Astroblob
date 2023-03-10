@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/tiles_packed.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Door.gd" type="Script" id=2]
+[ext_resource path="res://Cheese Toast 400.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7, 10.5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+font_data = ExtResource( 3 )
+
+[node name="Door" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -12 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 180, 102, 18, 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -10.5 )
+shape = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.588235 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -21.0
+margin_top = -42.0
+margin_right = 9.0
+margin_bottom = -34.0
+rect_scale = Vector2( 1.4, 1.4 )
+
+[node name="Label" type="Label" parent="Panel"]
+self_modulate = Color( 0.223529, 0.223529, 0.223529, 1 )
+margin_left = -9.28571
+margin_top = 0.714294
+margin_right = 469.714
+margin_bottom = 63.7143
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = SubResource( 2 )
+text = "no key"
+align = 1
+valign = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="Panel"]
+position = Vector2( 1, 0 )
+color = Color( 0.196078, 0.196078, 0.196078, 1 )
+polygon = PoolVector2Array( 9.71428, 8.57143, 14, 12.8571, 18.2857, 8.57143 )
+
+[connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Door_body_exited"]

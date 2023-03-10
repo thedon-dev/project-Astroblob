@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/maximize_005.ogg-180f2d681cd1d4e7cbb4531e8126989d.oggstr"
+
+[deps]
+
+source_file="res://sounds and music/Audio/maximize_005.ogg"
+dest_files=[ "res://.import/maximize_005.ogg-180f2d681cd1d4e7cbb4531e8126989d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

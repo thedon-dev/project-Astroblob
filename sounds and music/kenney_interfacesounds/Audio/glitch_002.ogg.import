@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/glitch_002.ogg-92cf1a21ab273009cf498d05fe190cde.oggstr"
+
+[deps]
+
+source_file="res://sounds and music/kenney_interfacesounds/Audio/glitch_002.ogg"
+dest_files=[ "res://.import/glitch_002.ogg-92cf1a21ab273009cf498d05fe190cde.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

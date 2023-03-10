@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Cheese Toast 400.otf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+font_data = ExtResource( 1 )
+
+[node name="screen_details" type="CanvasLayer"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 9.00002
+margin_top = 9.0
+margin_right = 129.0
+margin_bottom = 28.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 1 )
+text = "Spacebar to pause"
+align = 1
+valign = 1

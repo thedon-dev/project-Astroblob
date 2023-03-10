@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/death_zone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/spike.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Walking_enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/MovingSpikeEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/stopEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/spring.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/checkPoint.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 711, 9, 0, 0, 0, 0, 819, 9, 0, 0, 0, 0, 819, 45, 0, 0, 0, 0, 711, 45, 0, 0, 0, 0, 711, 9 )
+}
+
+[node name="Level3" instance=ExtResource( 1 )]
+
+[node name="Player" parent="." index="0"]
+position = Vector2( -27, 45 )
+
+[node name="TileMap" parent="." index="3"]
+tile_data = PoolIntArray( -65539, 4, 0, -3, 4, 0, -65474, 1, 65537, -65473, 1, 65538, -65472, 1, 65538, -65471, 1, 65538, -65470, 1, 65538, -65469, 1, 65538, -65468, 1, 65538, -65467, 1, 65539, 65531, 10, 0, 65532, 9, 0, 65533, 3, 0, 12, 1, 1, 13, 1, 2, 14, 1, 2, 15, 1, 3, 62, 1, 393217, 63, 1, 393218, 64, 1, 393218, 65, 1, 393218, 66, 1, 393218, 67, 1, 393218, 68, 1, 393218, 69, 1, 393219, 79, 1, 0, 131069, 5, 0, 65564, 1, 1, 65565, 1, 2, 65566, 1, 2, 65567, 1, 3, 65576, 1, 1, 65577, 1, 2, 65578, 1, 2, 65579, 1, 2, 65580, 1, 3, 65598, 1, 458753, 65599, 1, 458754, 65600, 1, 458754, 65601, 1, 458754, 65602, 1, 458754, 65603, 1, 458754, 65604, 1, 458754, 65605, 1, 458755, 196605, 2, 0, 131108, 1, 0, 262139, 1, 1, 262140, 1, 2, 262141, 1, 2, 262142, 1, 2, 262143, 1, 2, 196608, 1, 2, 196609, 1, 2, 196610, 1, 2, 196611, 1, 2, 196612, 1, 2, 196613, 1, 2, 196614, 1, 3, 196628, 1, 1, 196629, 1, 2, 196630, 1, 2, 196631, 1, 3, 196658, 1, 1, 196659, 1, 2, 196660, 1, 2, 196661, 1, 3, 196684, 1, 1, 196685, 1, 2, 196686, 1, 2, 196687, 1, 2, 196688, 1, 2, 196689, 1, 3, 196696, 1, 1, 196697, 1, 2, 196698, 1, 2, 196699, 1, 2, 196700, 1, 2, 196701, 1, 2, 196702, 1, 2, 196703, 1, 3, 196710, 1, 1, 196711, 1, 2, 196712, 1, 2, 196713, 1, 2, 196714, 1, 2, 196715, 1, 2, 196716, 1, 2, 196717, 1, 3, 196724, 1, 1, 196725, 1, 2, 196726, 1, 2, 196727, 1, 2, 196728, 1, 2, 196729, 1, 2, 196730, 1, 2, 196731, 1, 2, 196732, 1, 2, 196733, 1, 2, 196734, 1, 2, 196735, 1, 2, 196736, 1, 2, 196737, 1, 2, 196738, 1, 3, 262155, 1, 1, 262156, 1, 2, 262157, 1, 2, 262158, 1, 3, 262179, 1, 1, 262180, 1, 2, 262181, 1, 3, 327707, 1, 1, 327708, 1, 2, 327709, 1, 2, 327710, 1, 3, 327723, 1, 1, 327724, 1, 2, 327725, 1, 2, 327726, 1, 3, 327739, 1, 0 )
+
+[node name="TileMap2" parent="." index="4"]
+tile_data = PoolIntArray( -131076, 1, 0, -131075, 1, 1, -131074, 1, 2, -65540, 1, 131072, -65539, 1, 131073, -65538, 1, 131074, -131009, 4, 0, 63, 2, 0, 68, 2, 0, 196604, 5, 0, 131125, 5, 0 )
+
+[node name="Door" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 2304, 54 )
+level_path = "res://scenes/WinScene.tscn"
+
+[node name="key" parent="." index="6"]
+position = Vector2( 1656, 36 )
+
+[node name="death_zone" parent="." index="7" instance=ExtResource( 2 )]
+position = Vector2( 1224, 207 )
+scale = Vector2( 22, 1 )
+
+[node name="spike" type="Node2D" parent="." index="8"]
+
+[node name="Spike" parent="spike" index="0" instance=ExtResource( 4 )]
+position = Vector2( 207, 72 )
+
+[node name="Spike2" parent="spike" index="1" instance=ExtResource( 4 )]
+position = Vector2( 225, 72 )
+
+[node name="Spike3" parent="spike" index="2" instance=ExtResource( 4 )]
+position = Vector2( 243, 72 )
+
+[node name="Spike4" parent="spike" index="3" instance=ExtResource( 4 )]
+position = Vector2( 261, 72 )
+
+[node name="Spike5" parent="spike" index="4" instance=ExtResource( 4 )]
+position = Vector2( 513, 18 )
+
+[node name="Spike6" parent="spike" index="5" instance=ExtResource( 4 )]
+position = Vector2( 531, 18 )
+
+[node name="Spike7" parent="spike" index="6" instance=ExtResource( 4 )]
+position = Vector2( 549, 18 )
+
+[node name="Spike8" parent="spike" index="7" instance=ExtResource( 4 )]
+position = Vector2( 783, 90 )
+
+[node name="Spike10" parent="spike" index="8" instance=ExtResource( 4 )]
+position = Vector2( 801, 90 )
+
+[node name="Spike11" parent="spike" index="9" instance=ExtResource( 4 )]
+position = Vector2( 819, 90 )
+
+[node name="Spike12" parent="spike" index="10" instance=ExtResource( 4 )]
+position = Vector2( 837, 90 )
+
+[node name="Spike9" parent="spike" index="11" instance=ExtResource( 4 )]
+position = Vector2( 567, 18 )
+
+[node name="MovingSpikeEnemy" parent="." index="9" instance=ExtResource( 6 )]
+curve = SubResource( 1 )
+speed = 3
+
+[node name="stopEnemy" parent="." index="10" instance=ExtResource( 7 )]
+position = Vector2( 936, 9 )
+
+[node name="spring" parent="." index="11" instance=ExtResource( 8 )]
+position = Vector2( 1071, 90 )
+spring_force = 300
+
+[node name="checkPoint" parent="." index="12" instance=ExtResource( 9 )]
+position = Vector2( 1188, -18 )
+
+[node name="walking_enemy" type="Node2D" parent="." index="13"]
+
+[node name="Walking_enemy" parent="walking_enemy" index="0" instance=ExtResource( 5 )]
+position = Vector2( 657, 72 )
+
+[node name="Walking_enemy2" parent="walking_enemy" index="1" instance=ExtResource( 5 )]
+position = Vector2( 1377, 54 )
+
+[node name="Walking_enemy3" parent="walking_enemy" index="2" instance=ExtResource( 5 )]
+position = Vector2( 1467, 54 )
+
+[node name="Walking_enemy4" parent="walking_enemy" index="3" instance=ExtResource( 5 )]
+position = Vector2( 1593, 54 )
+
+[node name="Walking_enemy5" parent="walking_enemy" index="4" instance=ExtResource( 5 )]
+position = Vector2( 1719, 54 )
+
+[node name="Walking_enemy6" parent="walking_enemy" index="5" instance=ExtResource( 5 )]
+position = Vector2( 1845, 54 )
+
+[node name="Walking_enemy7" parent="walking_enemy" index="6" instance=ExtResource( 5 )]
+position = Vector2( 1971, 54 )
+
+[node name="Walking_enemy8" parent="walking_enemy" index="7" instance=ExtResource( 5 )]
+position = Vector2( 2097, 54 )

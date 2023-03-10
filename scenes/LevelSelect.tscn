@@ -1,0 +1,149 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/LevelSelect.gd" type="Script" id=1]
+[ext_resource path="res://assets/Astroblob (DEBUG) 03_03_2023 8_25_15 pm.png" type="Texture" id=2]
+[ext_resource path="res://assets/Astroblob (DEBUG) 27_02_2023 10_14_54 pm.png" type="Texture" id=3]
+[ext_resource path="res://assets/Astroblob (DEBUG) 27_02_2023 10_16_24 pm.png" type="Texture" id=4]
+[ext_resource path="res://Cheese Toast 400.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/gameicons/PNG/Black/1x/locked.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 5 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 50, 50 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="LevelSelect" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.207843, 0.294118, 1 )
+
+[node name="Control2" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="level1" type="Label" parent="Control2"]
+margin_left = 90.0
+margin_top = 108.0
+margin_right = 113.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 1 )
+text = "level 1"
+align = 1
+valign = 1
+
+[node name="level2" type="Label" parent="Control2"]
+margin_left = 162.0
+margin_top = 108.0
+margin_right = 187.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 1 )
+text = "level 2"
+align = 1
+valign = 1
+
+[node name="level3" type="Label" parent="Control2"]
+margin_left = 234.0
+margin_top = 108.0
+margin_right = 259.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 1 )
+text = "level 3"
+align = 1
+valign = 1
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="1" type="Button" parent="Control"]
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 1264.0
+margin_bottom = 663.0
+rect_scale = Vector2( 0.05, 0.05 )
+icon = ExtResource( 3 )
+flat = true
+
+[node name="2" type="Button" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.0
+margin_top = -18.0
+margin_right = 1166.0
+margin_bottom = 573.0
+rect_scale = Vector2( 0.05, 0.05 )
+disabled = true
+icon = ExtResource( 2 )
+flat = true
+
+[node name="3" type="Button" parent="Control"]
+margin_left = 216.0
+margin_top = 72.0
+margin_right = 1408.0
+margin_bottom = 665.0
+rect_scale = Vector2( 0.05, 0.05 )
+disabled = true
+icon = ExtResource( 4 )
+flat = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -26.0
+margin_top = 20.0
+margin_right = 26.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 2 )
+text = "LEVELS"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="."]
+margin_left = 18.0
+margin_top = 144.0
+margin_right = 58.0
+margin_bottom = 165.0
+custom_fonts/font = SubResource( 3 )
+text = "BACK"
+flat = true
+
+[node name="padlocks" type="Node2D" parent="."]
+
+[node name="2" type="AnimatedSprite" parent="padlocks"]
+position = Vector2( 174, 86 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 5 )
+
+[node name="3" type="AnimatedSprite" parent="padlocks"]
+position = Vector2( 247, 86 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 5 )
+
+[connection signal="pressed" from="Control/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="Control/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="Control/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

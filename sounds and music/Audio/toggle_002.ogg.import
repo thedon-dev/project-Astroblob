@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/toggle_002.ogg-e04e550dfef4b012d10d2eb54ba3da3a.oggstr"
+
+[deps]
+
+source_file="res://sounds and music/Audio/toggle_002.ogg"
+dest_files=[ "res://.import/toggle_002.ogg-e04e550dfef4b012d10d2eb54ba3da3a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
